@@ -1,0 +1,124 @@
+ul{
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+ul>li{
+   padding: 12px;
+   font-size: 18px;
+   /* font-family: karla; */
+   font-weight: 500;
+}
+.header{
+   display: flex;
+   justify-content: space-around;
+}
+.hero{
+   background-color: #495E57;
+   width: 100%;
+   height: 50vh;
+   display: flex;
+   justify-content: space-around;
+}
+.content h2{
+   font-size: 36px;
+   font-weight: 500;
+   color: #F4CE14;
+   /* font-family: ; */
+}
+.content h3{
+   margin-top: -30px;
+   color: white;
+   /* font-family: ; */
+}
+.content p{
+   color: white;
+    /* font-family: karla; */
+}
+
+.content #button{
+   background-color: #F4CE14;
+   color: black;
+   outline: none;
+   border: none;
+   padding-left: 15px;
+   padding-right: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border-radius: 20px;
+   font-size: 16px;
+   /* font-family: karla; */
+   font-weight: bold;
+}
+#image{
+   border-radius: 16px;
+   margin-top: 20px;
+}
+
+.content2{
+   display: flex;
+   justify-content: space-around;
+   margin-top: 160px;
+}
+
+.content2 h4{
+   font-size: 18px;
+   font-weight: bold;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content2 #button{
+   background-color: #F4CE14;
+   color: black;
+   outline: none;
+   border: none;
+   padding-left: 40px;
+   padding-right: 40px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   border-radius: 16px;
+   font-size: 18px;
+   /* font-family: karla; */
+   font-weight: bold;
+}
+
+.cards{
+   display: flex;
+   justify-content: space-around;
+   margin-top: 30px;
+}
+
+.card1{
+   width: 20%;
+}
+.card1 #image3{
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   
+}
+.content3{
+   background-color: #EDEFEE;
+   margin-top: -10px;
+   height: 40vh;
+}
+.content3 p{
+   color: #495E57;
+   font-weight: 500;
+   font-size: 16px;
+}
+.content3 #button3{
+   margin-top: 20px;
+   outline: none;
+   border: none;
+   font-size: 16px;
+   font-weight: bold;
+   font-family: karla;
+}
+.content4{
+   display: flex;
+   justify-content: space-between;
+}
+.content4 h2{
+   font-size: 24px;
+   font-weight: 500;
+}
