@@ -17,17 +17,15 @@ const availableTimesReducer = (state, action) => {
       return state;
   }
 };
+export const initializeTimes = () => [
+  '17:00',
+  '18:00',
+  '19:00',
+  '20:00',
+  '21:00',
+  '22:00',
+];
 function App() {
-
-  const initializeTimes = () => [
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ];
-
   // Use useReducer hook to manage availableTimes state
   const [availableTimes, dispatch] = useReducer(
     availableTimesReducer,
@@ -59,4 +57,4 @@ function App() {
   )
 }
 
-export default App
+export  {availableTimesReducer, App};

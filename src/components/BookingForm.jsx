@@ -38,17 +38,14 @@ function BookingForm({availableTimes, updateTimes}) {
     setChosenTime('17:00');
     setNumberOfGuests(' ');
     setOccasion('Birthday');
-
-
-
-  };
+};
   return (
     <>
     <div>
          <Header/>
     </div>
     <div className='Form'>
-      <h2>Online Table Reservations</h2>
+      <h2>Book Now</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="res-date">Choose date:</label>
         <input
@@ -60,7 +57,7 @@ function BookingForm({availableTimes, updateTimes}) {
 
         <label htmlFor="res-time">Choose time:</label>
         <select id="res-time" value={chosenTime} onChange={handleTimeChange}>
-          {availableTimes.map((time) => (
+          {availableTimes && availableTimes.map((time) => (
             <option key={time} value={time}>
               {time}
             </option>
