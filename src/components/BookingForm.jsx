@@ -3,6 +3,7 @@ import Header from './Header'
 import logo from '../assets/logo.svg'
 import Footer from './Footer'
 import { useState } from 'react'
+import  { Link } from 'react-router-dom'
 function BookingForm({availableTimes, updateTimes}) {
   const [chosenDate, setChosenDate] = useState('');
   const [chosenTime, setChosenTime] = useState('17:00'); // Set a default time
@@ -83,7 +84,7 @@ function BookingForm({availableTimes, updateTimes}) {
         </select>
 
         {/* Submit button */}
-        <input type="submit" value="Make Your reservation" />
+       <Link to='/confirmation'></Link> <input type="submit" value="Make Your reservation" /><Link/>
       </form>
     </div>
    <div>

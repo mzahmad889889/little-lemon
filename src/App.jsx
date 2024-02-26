@@ -7,6 +7,7 @@ import {
 import Home from './components/Home';
 import BookingForm from './components/BookingForm';
 import { useReducer } from 'react';
+import ConfirmedBooking from './components/ConfirmedBooking';
 
 const availableTimesReducer = (state, action) => {
   switch (action.type) {
@@ -17,15 +18,15 @@ const availableTimesReducer = (state, action) => {
       return state;
   }
 };
-export const initializeTimes = () => [
-  '17:00',
-  '18:00',
-  '19:00',
-  '20:00',
-  '21:00',
-  '22:00',
-];
+
 function App() {
+
+  const initializeTimes = async () => {
+    const today = new Date().toISOString().split('T')[0];
+    const availableTimes = await fetchAPI(today);
+    return availableTimes;
+  };
+
   // Use useReducer hook to manage availableTimes state
   const [availableTimes, dispatch] = useReducer(
     availableTimesReducer,
@@ -33,17 +34,16 @@ function App() {
     initializeTimes
   );
 
-  // Function to handle state changes based on the selected date
-  const updateTimes = (selectedDate) => {
-    // You can implement logic here to fetch available times based on the selected date
-    // For now, we'll return the same available times regardless of the date
 
+
+  const updateTimes = async (selectedDate) => {
+    const availableTimes = await fetchAPI(selectedDate);
     dispatch({
       type: 'UPDATE_TIMES',
-      availableTimes: initializeTimes(),
+      availableTimes: availableTimes,
     });
-
   };
+
 
   return (
     <>
@@ -51,10 +51,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/booking' element={ <BookingForm availableTimes = {availableTimes} updateTimes={updateTimes}/> }/>
+        <Rout path='/confirmation' element={<ConfirmedBooking/>}/>
       </Routes>
     </BrowserRouter>
     </>
   )
 }
 
-export  {availableTimesReducer, App};
+export  default App;
