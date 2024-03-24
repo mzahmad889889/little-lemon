@@ -3,16 +3,17 @@ import Header from './Header'
 import logo from '../assets/logo.svg'
 import Footer from './Footer'
 import { useState } from 'react'
-import  { Link } from 'react-router-dom'
-function BookingForm({availableTimes, updateTimes}) {
-  const [chosenDate, setChosenDate] = useState('');
-  const [chosenTime, setChosenTime] = useState('17:00'); // Set a default time
+import { useNavigate } from 'react-router-dom';
+function BookingForm({availableTimes, updateTimes, submitForm, error}) {
+
+  const [chosenDate, setChosenDate] = useState(new Date().toISOString().substring(0, 10));
+  const [chosenTime, setChosenTime] = useState(' '); // Set a default time
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
-
   // Handler for updating the chosen date
   const handleDateChange = (event) => {
-    setChosenDate(event.target.value);
+    const newDate = event.target.value;
+    setChosenDate(newDate);
 
     // Dispatch the state change when the date is changed
     updateTimes(newDate);
@@ -20,7 +21,7 @@ function BookingForm({availableTimes, updateTimes}) {
 
 
   const handleTimeChange = (event) => {
-    setChosenTime(event.target.value);
+      setChosenTime(event.target.value);
   };
 
   const handleGuestsChange = (event) => {
@@ -31,13 +32,15 @@ function BookingForm({availableTimes, updateTimes}) {
     setOccasion(event.target.value);
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Add logic to handle form submission (e.g., communicate with an API) here
-    console.log("Form submitted:", { chosenDate, chosenTime, numberOfGuests, occasion });
-    setChosenDate(' ');
-    setChosenTime('17:00');
-    setNumberOfGuests(' ');
+    const data =  { chosenDate, chosenTime, numberOfGuests, occasion };
+    submitForm(data, navigate);
+    setChosenDate(new Date().toISOString().substring(0, 10));
+    setChosenTime(' ');
+    setNumberOfGuests(1);
     setOccasion('Birthday');
 };
   return (
@@ -46,7 +49,7 @@ function BookingForm({availableTimes, updateTimes}) {
          <Header/>
     </div>
     <div className='Form'>
-      <h2>Book Now</h2>
+      <h2>Online Table Reservation</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="res-date">Choose date:</label>
         <input
@@ -54,16 +57,19 @@ function BookingForm({availableTimes, updateTimes}) {
           id="res-date"
           value={chosenDate}
           onChange={handleDateChange}
+          min={new Date().toISOString().split('T')[0]}
         />
-
-        <label htmlFor="res-time">Choose time:</label>
-        <select id="res-time" value={chosenTime} onChange={handleTimeChange}>
-          {availableTimes && availableTimes.map((time) => (
-            <option key={time} value={time}>
-              {time}
-            </option>
-          ))}
-        </select>
+          <label htmlFor="res-time">Choose time:</label>
+          <select id="res-time" value={chosenTime} onChange={handleTimeChange}>
+              {Array.isArray(availableTimes) && availableTimes?
+                  availableTimes.map((time) => (
+                      <option key={time} value={time}>
+                          {time}
+                      </option>
+                  )):
+                  <option>{error}</option>
+              }
+          </select>
 
         <label htmlFor="guests">Number of guests:</label>
         <input
@@ -84,7 +90,7 @@ function BookingForm({availableTimes, updateTimes}) {
         </select>
 
         {/* Submit button */}
-       <Link to='/confirmation'></Link> <input type="submit" value="Make Your reservation" /><Link/>
+       <input className='backtohome' type="submit" value="Make Your reservation"/>
       </form>
     </div>
    <div>
