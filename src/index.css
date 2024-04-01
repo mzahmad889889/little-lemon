@@ -1,29 +1,19 @@
-.Navbar{
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  list-style-type: none;
-
+html, body{
+   overflow-x: hidden;
 }
-.Navbar >li{
-   padding: 12px;
-   font-size: 20px;
-   font-family: karla;
-   font-weight: 500;
-
+ul {
+   list-style: none;
 }
-ul li a {
+
+a {
    text-decoration: none;
- }
-
-.header{
-   display: flex;
-   justify-content: space-evenly;
 }
+
 .hero{
+   margin-top: 120px;
    background-color: #495E57;
    width: 100%;
-   height: 60vh;
+   height: 70vh;
    display: flex;
    justify-content: space-around;
 }
@@ -161,8 +151,6 @@ ul li a {
    display: flex;
    flex-direction: row;
    justify-content: space-evenly;
-
-
 }
 
 .review{
@@ -226,24 +214,15 @@ ul li a {
    margin-top: 100px;
    align-items: flex-start;
    justify-content: space-evenly;
-   height: 90vh;
+   height: 60vh;
 }
 .footer img{
    margin-top: 70px;
    transform: rotate(90deg);
 }
-.Menu1{
-   display: flex;
-   flex-direction: column;
-   margin-top: 100px;
-}
-.Menu1 ul{
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-}
 
-.Menu1 ul>li{
+
+.footer ul>li{
    list-style-type: none;
 }
 
@@ -269,8 +248,6 @@ form{
    flex-direction: column;
 
 }
-
-
 
 label{
    font-weight: bold;
@@ -328,4 +305,262 @@ h1{
    border: 1px solid #1dba3f;
    border-radius: 5px;
    box-shadow: inset;
+}
+
+@media (max-width: 1150px) {
+   .hero{
+      background-color: #495E57;
+      width: 100%;
+      height: 40vh;
+      display: flex;
+      justify-content: space-around;
+   }
+   .content h2{
+      font-size: 22px;
+      font-weight: 500;
+      color: #F4CE14;
+      /* font-family: ; */
+   }
+   .content h3{
+      margin-top: -15px;
+      color: white;
+      /* font-family: ; */
+   }
+   .content p{
+      color: white;
+      font-size: 14px;
+       /* font-family: karla; */
+   }
+
+   .content #button{
+      background-color: #F4CE14;
+      color: black;
+      outline: none;
+      border: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 20px;
+      font-size: 12px;
+      /* font-family: karla; */
+      font-weight: bold;
+   }
+   #image{
+      border-radius: 16px;
+      margin-top: 20px;
+      width: 150px;
+      height: 200px;
+   }
+   .content2{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+      margin-left: 1px;
+   }
+
+   .content2 h4{
+      font-size: 14px;
+      font-weight: bold;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+   }
+   
+   .content2 #button{
+      background-color: #f4cf15;
+      color: black;
+      outline: none;
+      border: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: bold;
+   }
+   .cards{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+   }
+
+   .card1{
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .card1 #image3{
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+
+   }
+   .content3{
+      background-color: #EDEFEE;
+      margin-top: -10px;
+      width: 267px;
+      height: 37vh;
+   }
+   
+   .content3 p{
+      color: #495E57;
+      font-weight: 500;
+      font-size: 16px;
+      margin-left: 15px;
+   }
+   .content3 #button3{
+      margin-top: 20px;
+      outline: none;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: karla;
+      margin-left: 15px;
+   }
+
+   .Testimonial{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #D9D9D9;
+      height: 140vh;
+
+     }
+     .Testimonial h2{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 36px;
+        margin-top: 40px;
+     }
+     .testiCard{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+     }
+     .review{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      width: 200px;
+      height: 190px;
+      margin-top: 10px;
+   
+   }
+   .revimg{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+   
+   }
+   .revimg img{
+      border-radius: 50px;
+   }
+   .About{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+   }
+   .AboutText{
+      width: 70%;
+   }
+   .AboutText h2{
+      font-size: 32px;
+   }
+   .AboutText h4{
+      font-size: 22px;
+      font-weight: 400;
+      margin-top: -15px;
+   }
+   .AboutText p{
+      margin-top: -10px;
+      font-family: karla;
+      font-size: 18px;
+      font-weight: 400;
+      word-spacing: 0.5em;
+      word-wrap: wrap;
+   }
+   .AboutImage img:nth-child(1){
+      border: 2px solid black;
+      margin-top: 20px;
+      border-radius: 30px;
+      width: 250px;
+      height: 300px;
+   }
+   .AboutImage img:nth-child(2){
+      border: 2px solid black;
+      margin-left: -180px;
+      border-radius: 30px;
+      margin-bottom: 80px;
+      width: 250px;
+      height: 300px;
+   }
+   .footer{
+      display: flex;
+      background-color: #D9D9D9;
+      flex-direction: column;
+      margin-top: 100px;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 80vh;
+   }
+   .footer img{
+      margin-top: 70px;
+      transform: rotate(0deg);
+   }
+   
+   
+   .footer ul>li{
+      list-style-type: none;
+   }
+
+   .Form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      width: 90%;
+      margin-top: 20px;
+      background-color: grey;
+      height: 70vh;
+      margin-left: 30px;
+   }
+   .Form h2{
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+   }
+   form{
+      display: flex;
+      flex-direction: column;
+
+   }
+
+   label{
+      font-weight: bold;
+      margin-top: 20px;
+      color: #ffffff;
+   }
+
+   label~input{
+       width: 500px;
+       height: 30px;
+       border: 1px solid #000000;
+       border-radius: 5px;
+   }
+   label+select{
+      width: 500px;
+      height: 30px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+   }
 }

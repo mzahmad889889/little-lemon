@@ -1,14 +1,10 @@
 import React from 'react'
-import Nav from './Nav'
-import logo from '../assets/logo.svg'
+import Navbar from './Navbar'
 import restauranfood from '../assets/restauranfood.jpg'
 function Header() {
   return (
     <>
-    <div className='header'>
-       <img src={logo} alt='resturant' width="189px" height="75px"/>
-       <Nav/>
-    </div>
+       <Navbar/>
     <div className='hero'>
       <div className='content'>
            <h2>Little Lemon</h2>
